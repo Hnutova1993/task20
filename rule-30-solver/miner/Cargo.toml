@@ -1,0 +1,38 @@
+[package]
+name = "rule-30-solver-miner"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "miner"
+path = "src/main.rs"
+
+[[bin]]
+name = "serve-axon"
+path = "src/serve_axon.rs"
+
+[dependencies]
+tokio = { workspace = true }
+anyhow = { workspace = true }
+
+tracing-subscriber = { workspace = true }
+tracing = { workspace = true }
+
+threadpool = { workspace = true }
+
+dotenv = { workspace = true }
+
+thiserror = { workspace = true }
+
+opentelemetry = { workspace = true }
+opentelemetry-appender-tracing = { workspace = true }
+opentelemetry-stdout = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+opentelemetry-otlp = { workspace = true }
+
+clap = { version = "4.5.20", features = ["derive"] }
+
+rule-30-solver-neuron = { path = "../base" }
+
+[dev-dependencies]
+num-bigint = "0.4.6"
